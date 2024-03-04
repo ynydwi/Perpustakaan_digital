@@ -6,7 +6,7 @@
 								
 								<div class="card-body">
                                 <?php
-                                    if(isset($_SESSION['user']['level'])){
+                                    if(isset($_SESSION['user']['username'])){
                                         ?>
                                     <a href="?page=ulasan_tambah" class="btn btn-primary">+ Tambah ulasan</a>
                                     <?php
