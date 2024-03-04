@@ -3,11 +3,11 @@ if(isset($_POST['ulasan_buku'])){
      
     $id_user = $_POST['id_user'];
     $id_buku = $_POST['id_buku'];
-    $judul_buku = $_POST['judul_buku'];
     $ulasan = $_POST['ulasan'];
     $rating = $_POST['rating'];
 
-    $query = mysqli_query($koneksi, "INSERT INTO ulasan_buku (id_user,id_buku,judul_buku,ulasan,rating) values('$id_user','$id_buku','$judul_buku','$ulasan','$ulasan','$rating')");
+    $query = mysqli_query($koneksi, "INSERT INTO ulasan_buku (id_user, id_buku, ulasan, rating) values('$id_user', '$id_buku', '$ulasan', '$rating')");
+
 
     if($query){
         echo '<script>alert("Ulasan berhasil ditambahkan!")</script>';
@@ -34,14 +34,19 @@ if(isset($_POST['ulasan_buku'])){
                                                 <td><input class="form-control" type="text" name="id_user"></td>
                                             </tr>
                                             <tr>
-                                                <td width="200">id buku</td>
-                                                <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="id_buku"></td>
-                                            </tr>
-                                            <tr>
                                                 <td width="200">judul buku</td>
                                                 <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="judul_buku"></td>
+                                                <td> <select name="id_buku" class="form-select">
+                                    <option value="" hidden></option>
+                                    <?php
+                                    $buk = mysqli_query($koneksi, "SELECT * FROM buku");
+                                    while ($data_buk = mysqli_fetch_array($buk)) {
+                                    ?>
+                                        <option value="<?= $data_buk['id_buku'] ?>"><?= $data_buk['judul'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select></td>
                                             </tr>
                                             <tr>
                                                 <td width="200">Ulasan anda</td>

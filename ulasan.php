@@ -29,13 +29,13 @@
                                         </tr>
                                         <?php
                                         $i = 1;
-                                        $query = mysqli_query($koneksi, "SELECT*FROM ulasan_buku INNER JOiN user on ulasan_buku.id_user = user.id_user");
+                                        $query = mysqli_query($koneksi, "SELECT*FROM ulasan_buku INNER JOiN user on ulasan_buku.id_user = user.id_user inner join buku on buku.id_buku=ulasan_buku.id_buku");
                                         while ($data = mysqli_fetch_array($query)){
                                         ?>
                                         <tr>
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $data['username']; ?></td>
-                                            <td><?php echo $data['judul_buku']; ?></td>
+                                            <td><?php echo $data['judul']; ?></td>
                                             <td><?php echo $data['ulasan']; ?></td>
                                             <td><?php echo $data['rating']; ?> <i class="align-middle" data-feather="star"></i> </td>
                                             <td>
