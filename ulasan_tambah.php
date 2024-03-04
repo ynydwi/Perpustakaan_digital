@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['judul'])){
+if(isset($_POST['ulasan'])){
      
     $id_user = $_POST['id_user'];
     $id_buku = $_POST['id_buku'];
@@ -10,7 +10,7 @@ if(isset($_POST['judul'])){
     $query = mysqli_query($koneksi, "INSERT INTO ulasan (id_user,id_buku,judul_buku,ulasan,rating) values('$id_user','$id_buku','$judul_buku','$ulasan','$ulasan','$rating')");
 
     if($query){
-        echo '<script>alert("Ulasan berhasil ditambahkan!")</script>';
+        echo '<script>alert("Ulasan berhasil ditambahkan!"); location.href="ulasan.php";</script>';
     }else{
         echo '<script>alert("Ulasan gagal ditambahkan")</script>';
     }
@@ -46,12 +46,12 @@ if(isset($_POST['judul'])){
                                             <tr>
                                                 <td width="200">Ulasan anda</td>
                                                 <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="kompetensi_keahlian"></td>
+                                                <td><input class="form-control" type="text" name="ulasan"></td>
                                             </tr>
                                             <tr>
                                                 <td width="200">Rating</td>
                                                 <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="kompetensi_keahlian"></td>
+                                                <td><input class="form-control" type="text" name="rating"></td>
                                             </tr>
                                             <tr>
                                                 <td></td>
