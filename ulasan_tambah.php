@@ -7,7 +7,7 @@ if(isset($_POST['ulasan'])){
     $ulasan = $_POST['ulasan'];
     $rating = $_POST['rating'];
 
-    $query = mysqli_query($koneksi, "INSERT INTO ulasan (id_user,id_buku,judul_buku,ulasan,rating) values('$id_user','$id_buku','$judul_buku','$ulasan','$ulasan','$rating')");
+    $query = mysqli_query($koneksi, "INSERT INTO ulasan_buku (id_user,id_buku,judul_buku,ulasan,rating) values('$id_user','$id_buku','$judul_buku','$ulasan','$ulasan','$rating')");
 
     if($query){
         echo '<script>alert("Ulasan berhasil ditambahkan!"); location.href="ulasan.php";</script>';
