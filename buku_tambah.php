@@ -10,7 +10,7 @@ if(isset($_POST['judul'])){
     $query = mysqli_query($koneksi, "INSERT INTO buku (judul,penulis,penerbit,tahun_terbit,stok) values('$judul','$penulis','$penerbit','$tahun_terbit','$stok')");
 
     if($query){
-        echo '<script>alert("Tambah data buku Berhasil")</script>';
+        echo '<script>alert("Tambah data buku Berhasil"); location.href="buku.php";</script>';
     }else{
         echo '<script>alert("Tambah data buku Gagal")</script>';
     }
@@ -41,7 +41,7 @@ if(isset($_POST['judul'])){
                                             <tr>
                                                 <td width="200">Penerbit</td>
                                                 <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="penulis"></td>
+                                                <td><input class="form-control" type="text" name="penerbit"></td>
                                             </tr>
                                             <tr>
                                                 <td width="200">Tahun Terbit</td>

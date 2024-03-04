@@ -38,10 +38,16 @@
                                             <td><?php echo $data['judul']; ?></td>
                                             <td><?php echo $data['ulasan']; ?></td>
                                             <td><?php echo $data['rating']; ?> <i class="align-middle" data-feather="star"></i> </td>
+                                            <?php
+                            if (isset($_SESSION['user']['level'])) {
+                            ?>
                                             <td>
                                                 <a href="?page=ulasan_hapus&id=<?php echo $data['id_user']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="trash-2"></i></a>
 
                                             </td>
+                                            <?php
+                            }
+                            ?>
                                         </tr>
                                         <?php
                                         $i++;

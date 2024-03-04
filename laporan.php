@@ -18,7 +18,7 @@
                                         <tr>
 
                                             <th>No</th>
-                                            <th>pengguna</th>
+                                            <th>Judul</th>
                                             <th>Nama user</th>
                                             <th>Tanggal peminjaman</th>
                                             <th>Tanggal pengembalian</th>
@@ -27,12 +27,12 @@
                                             </tr>
                                             <?php
                                             $i = 1;
-                                            $query = mysqli_query($koneksi, "SELECT*FROM peminjaman left join user on user.id_user = peminjaman.id_user left join buku on buku.id_buku = peminjaman.id_buku $where");
+                                            $query = mysqli_query($koneksi, "SELECT*FROM peminjaman inner join user on user.id_user = peminjaman.id_user inner join buku on buku.id_buku = peminjaman.id_buku $where");
                                             while ($data = mysqli_fetch_array($query)){
                                             ?>
                                             <tr>
                                                 <td><?php echo $i; ?></td>
-                                                <td><?php echo $data['id_user']; ?></td>
+                                                <td><?php echo $data['judul']; ?></td>
                                                 <td><?php echo $data['username']; ?></td>
                                                 <td><?php echo $data['tgl_peminjaman']; ?></td>
                                                 <td><?php echo $data['tgl_pengembalian']; ?></td>

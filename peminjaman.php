@@ -43,7 +43,7 @@ if (empty($_SESSION['user']['level'] )) {
             }else{
                
                 $queryus = mysqli_query($koneksi, "SELECT*FROM peminjaman INNER JOIN user on user.id_user=peminjaman.id_user INNER JOIN buku on peminjaman.id_buku=buku.id_buku");
-                // $query = mysqli_query($koneksi, "SELECT * FROM peminjaman inner join user on user.id_user=peminjaman.id_user inner join buku on buku.id_buku=peminjaman.id_buku");
+               
             }
                             
 
