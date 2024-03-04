@@ -31,7 +31,7 @@ if(isset($_POST['ulasan_buku'])){
                                             <tr>
                                                 <td width="200">id user</td>
                                                 <td width="1">:</td>
-                                                <td><input class="form-control" type="text" name="id_user"></td>
+                                                <td><div><input type="hidden" name="id_user" value="<?=$_SESSION['user']['id_user'];?>"></div></td>
                                             </tr>
                                             <tr>
                                                 <td width="200">judul buku</td>

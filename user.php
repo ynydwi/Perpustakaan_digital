@@ -13,7 +13,7 @@
                                             <th>Email</th>
                                             <th>Nama Lengkap</th>
                                             <th>Alamat</th>
-                                            <th>Aksi</th>
+                                            
                                         </tr>
                                         <?php
                                         $i = 1;
@@ -26,10 +26,6 @@
                                             <td><?php echo $data['email']; ?></td>
                                             <td><?php echo $data['namaLengkap']; ?></td>
                                             <td><?php echo $data['alamat']; ?></td>
-                                            <td>
-                                                <a href="?page=user_ubah&id=<?php echo $data['username']; ?>" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></a>
-                                                <a href="?page=user_hapus&id=<?php echo $data['username']; ?>" class="btn btn-danger"><i class="align-middle" data-feather="trash-2"></i></a>
-                                            </td>
                                         </tr>
                                         <?php
                                         $i++;

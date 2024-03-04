@@ -39,8 +39,15 @@
                     <?php
                     $i = 1;
 
+                    $idp = $_SESSION['user']['id_user'];
+
+                    $queryus = mysqli_query($koneksi, "SELECT*FROM peminjaman LEFT JOIN buku on peminjaman.id_buku=buku.id_buku where id_user ='$idp'");
+
+                    while($dataus = mysqli_fetch_array($queryus)){
+
+                    
                     $query = mysqli_query($koneksi, "SELECT * FROM peminjaman inner join user on user.id_user=peminjaman.id_user inner join buku on buku.id_buku=peminjaman.id_buku");
-                    while ($data = mysqli_fetch_array($query)) {
+                    $data = mysqli_fetch_array($query); 
                     ?>
                         <tr>
                             <td><?php echo $i; ?></td>
