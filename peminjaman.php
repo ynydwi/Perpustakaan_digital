@@ -31,23 +31,26 @@
                             <th>Aksi</th>
                         <?php
 
-                        }else{
-                            $where = "WHERE peminjaman.id_user=" . $_SESSION['user']['id_user'];
                         }
                         ?>
                     </tr>
                     <?php
                     $i = 1;
+if (empty($_SESSION['user']['level'] )) {
+                $idp = $_SESSION['user']['id_user'];
 
-                    $idp = $_SESSION['user']['id_user'];
+                $queryus = mysqli_query($koneksi, "SELECT*FROM peminjaman INNER JOIN user on user.id_user=peminjaman.id_user LEFT JOIN buku on peminjaman.id_buku=buku.id_buku where peminjaman.id_user ='$idp'");
+            }else{
+               
+                $queryus = mysqli_query($koneksi, "SELECT*FROM peminjaman INNER JOIN user on user.id_user=peminjaman.id_user INNER JOIN buku on peminjaman.id_buku=buku.id_buku");
+                // $query = mysqli_query($koneksi, "SELECT * FROM peminjaman inner join user on user.id_user=peminjaman.id_user inner join buku on buku.id_buku=peminjaman.id_buku");
+            }
+                            
 
-                    $queryus = mysqli_query($koneksi, "SELECT*FROM peminjaman LEFT JOIN buku on peminjaman.id_buku=buku.id_buku where id_user ='$idp'");
+                    while($data = mysqli_fetch_array($queryus)){
 
-                    while($dataus = mysqli_fetch_array($queryus)){
-
-                    
-                    $query = mysqli_query($koneksi, "SELECT * FROM peminjaman inner join user on user.id_user=peminjaman.id_user inner join buku on buku.id_buku=peminjaman.id_buku");
-                    $data = mysqli_fetch_array($query); 
+                        
+                    // ($data = mysqli_fetch_array($query)); 
                     ?>
                         <tr>
                             <td><?php echo $i; ?></td>
