@@ -91,12 +91,7 @@ if(!isset($_SESSION['user'])){
               <i class="align-middle" data-feather="message-circle"></i> <span class="align-middle">Ulasan</span>
             </a>
 					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.php?page=koleksi_pribadi">
-              <i class="align-middle" data-feather="message-circle"></i> <span class="align-middle">Koleksi pribadi</span>
-            </a>
-					</li>
-
+					
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
               <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Logout</span>
